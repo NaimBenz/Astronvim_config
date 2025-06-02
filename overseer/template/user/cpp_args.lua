@@ -9,7 +9,7 @@ return {
         file,
         "-o",
         vim.fn.expand "%:p:r",
-        "-std=c++20",
+        "-std=c++23",
         "-Wall",
         "-Wextra",
         "-Wpedantic",
