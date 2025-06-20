@@ -1,12 +1,12 @@
--- return {
---   -- Thème OneDark.nvim
---   {
---     "navarasu/onedark.nvim",
---     config = function()
---       require("onedark").setup {
---         style = "Deep", -- ou "light" selon ta préférence
---       }
---       require("onedark").load()
---     end
---   },
--- }
+return {
+  {
+    "navarasu/onedark.nvim",
+    priority = 1000, -- Pour qu'il soit chargé en premier
+    config = function()
+      require("onedark").setup {
+        style = "deep", -- ou "cool", "warm", etc.
+      }
+      require("onedark").load()
+    end,
+  },
+}
