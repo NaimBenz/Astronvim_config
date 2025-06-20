@@ -2,7 +2,7 @@ return {
   "stevearc/overseer.nvim",
   -- Bug whith DAP
   -- Start on this one: ecdfbac807652a374414d3d6f3e5b3af201f884d
-  ft = { "cpp", "python", "java", "make", "sql","latex" },
+  ft = { "cpp", "python", "java", "make", "sql","latex","lua" },
   cmd = {
     "OverseerOpen",
     "OverseerClose",
@@ -42,6 +42,7 @@ return {
         "user.sql",
         "user.octave",
         "user.latex",
+        "user.lua",
       },
       -- When true, tries to detect a green color from your colorscheme to use for success highlight
       auto_detect_success_color = true,
