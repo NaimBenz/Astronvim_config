@@ -3,12 +3,12 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   event = "VeryLazy",
   config = function()
-    require("lualine").setup({
+    require("lualine").setup {
       options = {
-        theme = "onedark",
+        theme = "catppuccine-mocha",
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
       },
-    })
+    }
   end,
 }
