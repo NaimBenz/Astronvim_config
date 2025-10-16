@@ -1,15 +1,15 @@
 return {
-  name = "C++",
+  name = "C",
   builder = function()
     -- Full path to current file (see :help expand())
     local file = vim.fn.expand "%:p"
     return {
-      cmd = { "g++" },
+      cmd = { "gcc" },
       args = {
         file,
         "-o",
         vim.fn.expand "%:p:r",
-        "-std=c++23",
+        "-std=c23",
         "-Wall",
         "-Wextra",
         "-Wpedantic",
@@ -27,6 +27,6 @@ return {
     }
   end,
   condition = {
-    filetype = { "cpp" },
+    filetype = { "c" },
   },
 }

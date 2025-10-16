@@ -48,7 +48,8 @@ return {
           desc = "Close buffer from tabline",
         },
         -- 🔽 Ajout du raccourci pour OverseerRun
-        ["<Leader>r"] = { "<cmd>OverseerRun<CR>", desc = "Run" },
+        ["<Leader>r"] = { "<cmd>OverseerRun<CR>", desc = "Overseer Run" },
+        
       },
     },
   },
