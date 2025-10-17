@@ -49,7 +49,6 @@ return {
         },
         -- 🔽 Ajout du raccourci pour OverseerRun
         ["<Leader>r"] = { "<cmd>OverseerRun<CR>", desc = "Overseer Run" },
-        
       },
     },
   },
