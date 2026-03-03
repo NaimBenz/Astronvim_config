@@ -1,15 +1,23 @@
 return {
-  name = "C++",
+  name = "C/C++",
   builder = function()
-    -- Full path to current file (see :help expand())
     local file = vim.fn.expand "%:p"
+    local extension = vim.fn.expand "%:e"
+    -- Sélection du compilateur et des flags standards
+    local cmd = { "g++" }
+    local std_flag = "-std=c++23"
+    if extension == "c" then
+      cmd = { "gcc" }
+      std_flag = "-std=c11" -- Utilise un standard C (ex: c11) au lieu de c++23
+    end
+
     return {
-      cmd = { "g++" },
+      cmd = cmd,
       args = {
         file,
         "-o",
         vim.fn.expand "%:p:r",
-        "-std=c++23",
+        std_flag, -- Utilisation du flag approprié
         "-Wall",
         "-Wextra",
         "-Wpedantic",
@@ -19,7 +27,6 @@ return {
         vim.fn.expand "%:p:r",
       },
       components = {
-        -- { "on_output_quickfix", set_diagnostics = true },
         "on_result_diagnostics",
         { "on_complete_notify", statuses = { "FAILURE" } },
         "default",
@@ -27,6 +34,6 @@ return {
     }
   end,
   condition = {
-    filetype = { "cpp" },
+    filetype = { "cpp", "c" },
   },
 }
